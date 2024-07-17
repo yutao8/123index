@@ -1,7 +1,9 @@
 <?php
 error_reporting(0); // 关闭错误提示
-$lockFile='../data/install.lock';
-
+require_once './vendor/autoload.php';
+$lockFile='data/install.lock';
+is_dir('data') or @mkdir('data');
+$isWrite=is_writable('data');
 if (file_exists($lockFile)) {
     echo '<div class="alert alert-warning">您已经安装过，如需重新安装请删除<font color=red> '.$lockFile.' </font>文件后再安装！</div>';
     exit;
@@ -16,9 +18,9 @@ if (file_exists($lockFile)) {
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#4d545d">
-    <link rel="shortcut icon" href="../favicon.ico" />
-    <link href="../admin/layui/css/layui.css" rel="stylesheet">
-	<script type="text/javascript" src="../admin/layui/layui.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link href="admin/layui/css/layui.css" rel="stylesheet">
+	<script type="text/javascript" src="admin/layui/layui.js"></script>
 </head>
 <style type="text/css">
     body{text-align:center}.header{position:fixed;left:0;top:0;width:80%;height:60px;line-height:60px;background:#000;padding:0 10%;z-index:10000}.header h1{color:#fff;font-size:20px;font-weight:600;text-align:center}.install-box{margin:100px auto 0;background:#fff;border-radius:10px;padding:20px;overflow:hidden;box-shadow:5px 5px 15px#888888;display:inline-block;width:680px;min-height:500px}.protocol{text-align:left;height:400px;overflow-y:auto;padding:10px;color:#333}.protocol h2{text-align:center;font-size:16px;color:#000}.step-btns{padding:20px 0 10px 0}.copyright{padding:25px 0}.copyright,.copyright a{color:#ccc}.layui-table td,.layui-table th{text-align:left}.layui-table tbody tr.no{background-color:#f00;color:#fff}
@@ -61,7 +63,7 @@ if (file_exists($lockFile)) {
             if (phpversion() < '5.6') {
                 $version = 'no';
                 $fr = '<a href="javascript:;" class="layui-btn layui-btn-big layui-btn-disabled fr">进行下一步</a>';
-            } else {
+            } else if($isWrite){
                 $version = 'ok';
                 $fr = '<a href="?step=3" class="layui-btn layui-btn-big layui-btn-normal fr">进行下一步</a>';
             }
@@ -100,9 +102,9 @@ if (file_exists($lockFile)) {
                 </thead>
                 <tbody>
                     <tr class="ok">
-                        <td>/Config.php</td>
+                        <td>/data/Config.php</td>
                         <td>读写</td>
-                        <td>未知</td>
+                        <td>'.($isWrite?'读写':'错误').'</td>
                     </tr>
                 </tbody>
             </table>
@@ -182,14 +184,13 @@ if (file_exists($lockFile)) {
         ';
             break;
         case '4':
-            $name = $_POST['name'];
-            $indexpass = $_POST['indexpass'];
-            $record = $_POST['record'];
-            $user = $_POST['user'];
-            $pass = MD5($_POST['pass'] . '$$Www.Amoli.Co$$');
+            $name = $_POST['name']??'';
+            $indexpass = $_POST['indexpass']??'';
+            $record = $_POST['record']??'';
+            $user = $_POST['user']??'';
+            $pass = MD5($_POST['pass']??'' . '$$Www.Amoli.Co$$');
             if ($name && $user && $pass) {
-                require_once '../app/class/Amoli.class.php';
-                $C = new Config('../Config');
+                $C = new Config('Config');
                 // 存储数据
                 $C->set('name', $name); // 网站名称
                 $C->set('indexpass', $indexpass); // 前台密码
@@ -212,7 +213,7 @@ if (file_exists($lockFile)) {
                 <h1>' . $result . '</h1>
                 <div class="step-btns">
                 <a href="/" class="layui-btn layui-btn-primary layui-btn-big fl">返回首页</a>
-                <a href="../admin/index.html" class="layui-btn layui-btn-big layui-btn-normal fr">前往后台</a>
+                <a href="admin/index.html" class="layui-btn layui-btn-big layui-btn-normal fr">前往后台</a>
                 </div>
             </div>';
             break;

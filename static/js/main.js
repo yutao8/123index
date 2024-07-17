@@ -14,7 +14,7 @@ $(function () {
                     title: '提示',
                     content: '你还没有安装程序，点击确定安装',
                     icon: 2,
-                    yes: function () { window.location.href = 'install/index.php'; }
+                    yes: function () { window.location.href = 'install.php'; }
                 })
                 return;
             }
