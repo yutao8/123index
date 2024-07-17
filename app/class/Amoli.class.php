@@ -14,6 +14,7 @@ class Config
 {
     private $data;
     private $file;
+	const directory = 'data/';
 
     /**
      * 构造函数
@@ -22,7 +23,7 @@ class Config
      */
     function __construct($file)
     {
-        $file = $file . '.php';
+        $file = self::directory. $file . '.php';
         $this->file = $file;
         $this->data = self::read($file);
     }

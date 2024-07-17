@@ -28,7 +28,7 @@ switch ($act) {
         // 判断是否登录
         ($Cookie == md5($indexpass) || !$indexpass) ? $log = true : $log = false;
         // 判断是否安装
-        file_exists('install/install.lock') ? $install = true : $install = false;
+        file_exists('data/install.lock') ? $install = true : $install = false;
         $result = ['code' => 1, 'msg' => '获取成功！', 'data' => ['name' => $C->get('name'),  'record' => $C->get('record'), 'install' => $install, 'log' => $log, 'verify' => $C->get('verify', false)]];
         break;
     case 'getList': // 加载目录

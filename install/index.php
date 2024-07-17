@@ -1,7 +1,9 @@
 <?php
 error_reporting(0); // 关闭错误提示
-if (file_exists('install.lock')) {
-    echo '<div class="alert alert-warning">您已经安装过，如需重新安装请删除<font color=red> install/install.lock </font>文件后再安装！</div>';
+$lockFile='../data/install.lock';
+
+if (file_exists($lockFile)) {
+    echo '<div class="alert alert-warning">您已经安装过，如需重新安装请删除<font color=red> '.$lockFile.' </font>文件后再安装！</div>';
     exit;
 }
 ?>
@@ -73,7 +75,7 @@ if (file_exists('install.lock')) {
                         <th>环境名称</th>
                         <th>当前配置</th>
                         <th>所需配置</th>
-                    </tr> 
+                    </tr>
                 </thead>
                 <tbody>
                     <tr class="ok">
@@ -94,7 +96,7 @@ if (file_exists('install.lock')) {
                         <th>目录/文件</th>
                         <th>所需权限</th>
                         <th>当前权限</th>
-                    </tr> 
+                    </tr>
                 </thead>
                 <tbody>
                     <tr class="ok">
@@ -196,7 +198,7 @@ if (file_exists('install.lock')) {
                 $C->set('pass', $pass); // 后台密码
                 $msg = $C->save();
                 if ($msg) {
-                    file_put_contents('install.lock', 'www.amoli.co') ? $result = '安装完成!' : $result = 'install.lock写入失败!';
+                    file_put_contents($lockFile, 'www.amoli.co') ? $result = '安装完成!' : $result = 'install.lock写入失败，请给data文件夹写入权限';
                 } else {
                     $result = $msg;
                 }

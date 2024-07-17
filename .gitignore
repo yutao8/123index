@@ -1,6 +1,8 @@
-Config.php
+data/Config.php
 install/install.lock
 test/
 .idea
 /vendor
 composer.lock
+data/*
+!data/
