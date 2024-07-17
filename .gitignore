@@ -2,4 +2,5 @@ Config.php
 install/install.lock
 test/
 .idea
-vendor
+/vendor
+composer.lock

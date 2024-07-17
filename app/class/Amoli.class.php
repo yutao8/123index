@@ -1,8 +1,4 @@
 <?php
-defined('ROOT_PATH') or die('INVALID_ACCESS');
-require_once ROOT_PATH . '/app/sdk/oss/autoload.php';
-require_once ROOT_PATH . '/app/sdk/cos/autoload.php';
-require_once ROOT_PATH.'./vendor/autoload.php';
 
 use Yutao\Pan123\Client as pan123Client;
 use OSS\OssClient;

@@ -1,5 +1,15 @@
 {
     "require": {
         "yutao/pan123": "^1.0"
-    }
+    },
+  "autoload": {
+    "psr-4": {
+
+    },
+    "files": [
+      "\\app\\sdk\\cos\\autoload.php",
+      "\\app\\sdk\\oss\\autoload.php",
+      "\\app\\class\\Amoli.class.php"
+    ]
+  }
 }

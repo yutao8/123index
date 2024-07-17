@@ -2,11 +2,7 @@
 //error_reporting(0); // 关闭错误提示
 date_default_timezone_set('Asia/Shanghai');
 header('Content-Type: text/html; charset=UTF-8');
-define('ROOT_PATH', __DIR__);
-require_once ROOT_PATH. '/app/class/Amoli.class.php';
-
-
-
+require_once './vendor/autoload.php';
 $act = $_GET['act'];
 $C = new Config('Config');
 $Amoli = new Amoli();
