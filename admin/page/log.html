@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>更新日志 - Amoli私有云</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/admin/layui/css/layui.css" media="all">
+    <style>
+        .layui-red {
+            color: #f00 !important;
+            font-weight: bold;
+        }
+        .layui-blue {
+            color: #01AAED !important;
+        }
+    </style>
+</head>
+
+<body class="childrenBody">
+<div class="page-container">
+    <div class="layui-elem-quote layui-quote-nm history_box magb0">
+        <ul class="layui-timeline">
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                    <div class="layui-timeline-title">
+                        <h3 class="layui-inline">version V5.0.1</h3>
+                        <span class="layui-badge-rim">2024-07-14</span>
+                    </div>
+                    <ul>
+                        <li class="layui-red">[新增] 123云盘支持</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                    <div class="layui-timeline-title">
+                        <h3 class="layui-inline">version V4.2.2</h3>
+                        <span class="layui-badge-rim">2019-08-08</span>
+                    </div>
+                    <ul>
+                        <li class="layui-red">[新增] 前端启用Hash，支持前进后退</li>
+                        <li class="layui-red">[新增] 前端、分享页下载验证，防止恶意刷量(默认关闭)</li>
+                        <li class="layui-blue">[优化] 前端图片预览效果</li>
+                        <li>[优化] 后台网页设置增加填写数据判断</li>
+                        <li>[修复] 后台锁屏后不能解锁</li>
+                        <li class="layui-red">[修复] 设置过前端密码后，分享链接不能下载</li>
+                        <li class="layui-red">[修复] 部分Window环境本地存储二级目录出现中文，程序报错</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                    <div class="layui-timeline-title">
+                        <h3 class="layui-inline">version V4.2.1</h3>
+                        <span class="layui-badge-rim">2019-07-28</span>
+                    </div>
+                    <ul>
+                        <li class="layui-red">[新增] 文件分享，可以将文件分享给他人</li>
+                        <li>[优化] 安装文件，加入判断条件</li>
+                        <li>[优化] 后台上传时加入删除按钮</li>
+                        <li class="layui-blue">[优化] 统一PHP返回参数，方便二次开发</li>
+                        <li class="layui-blue">[优化] 手机访问后台不能上传文件</li>
+                        <li>[优化] 前端细节，提升访问速度</li>
+                        <li>[优化] 上个版本部分Bug，加入新Bug</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                    <div class="layui-timeline-title">
+                        <h3 class="layui-inline">version V4.2.0</h3>
+                        <span class="layui-badge-rim">2019-06-16</span>
+                    </div>
+                    <ul>
+                        <li class="layui-red">[新增] 腾讯云COS对象存储</li>
+                        <li>[新增] OSS单独选择文件夹列出(默认为根目录)</li>
+                        <li class="layui-blue">[新增] 后台设置前台统计代码</li>
+                        <li class="layui-red">[新增] 后台创建目录，并且支持递归创建</li>
+                        <li class="layui-blue">[优化] 上传成功后自动刷新当前目录</li>
+                        <li>[优化] 加入多处入口文件，提升程序安全</li>
+                        <li>[优化] 多处细节，提升访问速度</li>
+                        <li class="layui-blue">[修复] 本地存储上传文件卡顿，大文件出错</li>
+                        <li class="layui-red">[修复] IIS环境下，后台加载出错</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                    <div class="layui-timeline-title">
+                        <h3 class="layui-inline">version V4.1.0</h3>
+                        <span class="layui-badge-rim">2019-06-08</span>
+                    </div>
+                    <ul>
+                        <li class="layui-blue">[新增] 自动检测更新，提示更新</li>
+                        <li class="layui-red">[新增] 本地存储，没有OSS也可以使用</li>
+                        <li class="layui-blue">[新增] 首页验证开关(留空即为关闭)</li>
+                        <li>[新增] 首页后台系统基本参数</li>
+                        <li>[新增] 未知Bug无数</li>
+                        <li class="layui-blue">[优化] 自动提示安装，避免误操作</li>
+                        <li class="layui-blue">[优化] 增加多处备注，避免误操作</li>
+                        <li>[优化] 将常用功能放在后台首页，方便使用</li>
+                        <li>[优化] 登录步骤，加入简单的验证机制</li>
+                        <li>[优化] OSS设置和网站设置合并为一个页面</li>
+                        <li>[优化] 多处细节，提升访问速度</li>
+                        <li>[修复] 修复后台已知Bug</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                    <div class="layui-timeline-title">
+                        <h3 class="layui-inline">version V4.0.1</h3>
+                        <span class="layui-badge-rim">2019-05-26</span>
+                    </div>
+                    <ul>
+                        <li>[新增] 前端验证开关(前端密码留空即为不开启)</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe756;</i>
+                <div class="layui-timeline-content layui-text">
+                    <div class="layui-timeline-title">
+                        <h3 class="layui-inline">Amoli私有云 里程碑版本<span class="layui-red">Amoli私有云4.0.0</span>发布　
+                        </h3>
+                        <span class="layui-badge-rim">2019-05-21</span>
+                    </div>
+                    <ul>
+                        <li>[项目] 代码完全重构</li>
+                        <li>[项目] 前端采用Bootstrap4和layer构建</li>
+                        <li>[项目] 后端采用开源项目layuicms构建</li>
+                        <li class="layui-blue">[新增] 支持OSS自定义域名</li>
+                        <li class="layui-blue">[新增] 前端密码验证，正确输入密码后才可进入</li>
+                        <li class="layui-red">[新增] 前端支持部分文件在线预览</li>
+                        <li class="layui-red">[新增] 前端根据文件后缀名显示不同图标</li>
+                        <li>[优化] 安装步骤，安装成功率</li>
+                        <li>[优化] 前端全部使用Ajax异步请求提升用户访问</li>
+                        <li class="layui-red">[优化] 自动刷新文件不再使用手动</li>
+                        <li class="layui-red">[优化] 后台更改为响应式，手机端也可以操作</li>
+                        <li>[修复] 文件URL带特殊符号时下载不正常</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                    <div class="layui-timeline-title">
+                        <h3 class="layui-inline">version 3.0.0</h3>
+                        <span class="layui-badge-rim">2019-02-24</span>
+                    </div>
+                    <ul>
+                        <li>[新增] 后台管理模式</li>
+                        <li>[新增] 首页下载验证</li>
+                        <li>[新增] 一键配置OSS</li>
+                        <li>[新增] 网站上传OSS</li>
+                        <li>[修复] 首页排序问题</li>
+                        <li>[修复] 其余Bug若干</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                    <div class="layui-timeline-title">
+                        <h3 class="layui-inline">version 2.0.0</h3>
+                        <span class="layui-badge-rim">2019-02-13</span>
+                    </div>
+                    <ul>
+                        <li>[新增] Down下载页</li>
+                        <li>[新增] 使用php获取oss内文件</li>
+                        <li>[修复] 时间显示错误Bug</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="layui-timeline-item">
+                <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                <div class="layui-timeline-content layui-text">
+                    <div class="layui-timeline-title">
+                        <h3 class="layui-inline">version 1.0.0 正式与大家见面</h3>
+                        <span class="layui-badge-rim">2019-02-10</span>
+                    </div>
+                    <ul>
+                        <li>[项目] 破壳。</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+
+</html>
