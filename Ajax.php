@@ -3,6 +3,7 @@
 date_default_timezone_set('Asia/Shanghai');
 header('Content-Type: text/html; charset=UTF-8');
 require_once './vendor/autoload.php';
+define('ROOT_DIR',__DIR__);
 $act = $_GET['act'];
 $C = new Config('Config');
 $Amoli = new Amoli();

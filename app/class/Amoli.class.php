@@ -23,7 +23,7 @@ class Config
      */
     function __construct($file)
     {
-        $file = self::directory. $file . '.php';
+        $file = ROOT_DIR.'/'.self::directory. $file . '.php';
         $this->file = $file;
         $this->data = self::read($file);
     }

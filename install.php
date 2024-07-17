@@ -1,7 +1,8 @@
 <?php
 error_reporting(0); // 关闭错误提示
 require_once './vendor/autoload.php';
-$lockFile='data/install.lock';
+define('ROOT_DIR',__DIR__);
+$lockFile=ROOT_DIR.'/data/install.lock';
 is_dir('data') or @mkdir('data');
 $isWrite=is_writable('data');
 if (file_exists($lockFile)) {
@@ -188,7 +189,7 @@ if (file_exists($lockFile)) {
             $indexpass = $_POST['indexpass']??'';
             $record = $_POST['record']??'';
             $user = $_POST['user']??'';
-            $pass = MD5($_POST['pass']??'' . '$$Www.Amoli.Co$$');
+            $pass = MD5($_POST['pass'] . '$$Www.Amoli.Co$$');
             if ($name && $user && $pass) {
                 $C = new Config('Config');
                 // 存储数据
