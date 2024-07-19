@@ -456,6 +456,9 @@ class Amoli
 			$result[] = ['type' => 'null', 'name' => '提示：当前文件夹下没有文件'];
 		}
 		foreach ($res['fileList'] as $item){
+			if(!empty($item['trashed'])){
+			  continue;
+			}
 			$type=$item['type']===1?'wjj': $this->getStamp($item['filename']);
 			$size=$item['type']==1?'':round($item['size']/1024/1024,2).'M';
 			$result[] = ['type' =>$type, 'name' => $item['filename'], 'size' => $size, 'id'=>(string)$item['fileId'],'time'=>''];
