@@ -1,6 +1,6 @@
 {
     "require": {
-        "yutao/pan123": "^1.0"
+        "yutao/pan123": ">=1.0"
     },
   "autoload": {
     "psr-4": {
